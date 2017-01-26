@@ -11,9 +11,16 @@ class JobsController < ApplicationController
     end
   end
 
-  def index
-    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
-  end
+    def index
+      @jobs = case params[:order]
+              when 'by_lower_bound'
+                Job.published.order('wage_lower_bound DESC')
+              when 'by_upper_bound'
+                Job.published.order('wage_upper_bound DESC')
+              else
+                Job.published.recent
+              end
+    end
 
   def new
     @job = Job.new
@@ -24,7 +31,7 @@ class JobsController < ApplicationController
 
     if @job.save
       redirect_to jobs_path
-    el
+    else
       render :new
     end
   end
