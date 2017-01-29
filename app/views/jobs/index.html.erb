@@ -1,0 +1,86 @@
+<table class="table table-boldered">
+  
+  <%= form_tag jobs_path, :method => "get" do %>
+
+         <div class="searchform">
+            <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+            <span>
+                <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+                <!-- <input type="submit" value="点 击" class="mike"> -->
+             </span>
+         </div>
+      <% end %>
+
+    <div class="pull-right">
+    <%= link_to("遇见我的教练", new_job_path, :class => "btn btn-danger" ) %>
+    </div>
+
+    <div class="dropdown clearfix pull-right">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          排序
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+            <li>
+              <%= link_to("好评从高到低", jobs_path(:order => "by_lower_bound")) %>
+            </li>
+            <li>
+                <%= link_to("好评从低到高", jobs_path(:order => "by_upper_bound")) %>
+
+            </li>
+            <li>
+              <%= link_to("按照发表时间排序", jobs_path ) %>
+
+            </li>
+        </ul>
+    </div>
+
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#">等你遇见的人</a></li>
+        <li role="presentation"><a href="#">遇见方式</a></li>
+        <li role="presentation"><a href="#">遇见时间</a></li>
+        <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        遇见城市 <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+          <li role="presentation"><a href="#">北京</a></li>
+            <li role="presentation"><a href="#">深圳</a></li>
+              <li role="presentation"><a href="#">广州</a></li>
+              <li role="presentation"><a href="#">昆明</a></li>
+      </ul>
+      </ul>
+
+        <thead>
+            <tr>
+                <td>教练昵称</td>
+                <td>好评课时下限</td>
+                <td>好评课时上限</td>
+                <td>刊登时间</td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <% @jobs.each do |job| %>
+            <tr>
+                <td>
+                    <%= link_to(job.title, job_path(job)) %>
+                </td>
+                <td>
+                    <%= job.wage_lower_bound %>
+                </td>
+                <td>
+                    <%= job.wage_upper_bound %>
+                </td>
+                <td>
+                    <%= job.created_at %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+
+    </table>
+
+
+</table>

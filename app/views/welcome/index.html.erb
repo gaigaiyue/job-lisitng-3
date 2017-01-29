@@ -1,1 +1,22 @@
-<h1> Nice to meet U! </h1>
+  <div class="jumbotron">
+    <h1 class="title">瑜伽私人助理</h1>
+    <p class="slogan">瑜伽私人助理 是一个提供专业瑜伽服务的网站
+    <br>
+    在这里，希望能大家能找寻到适合自己的瑜伽老师
+    <br>
+    给自己一个期许 拥有健康的生活方式
+    </p>
+    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上遇见</a></p>
+  </div>
+
+
+  
+  <%= form_tag jobs_path, :method => "get" do %>
+    <div class="searchform">
+        <%= text_field_tag :search, params[:search], placeholder: "搜索职位", class: "searchbox"%>
+        <span>
+          <%= submit_tag "搜索", :title => nil, :description => nil, class: "mike" %>
+          <!-- <input type="submit" value="点 击" class="mike"> -->
+       </span>
+   </div>
+  <% end %>
