@@ -1,7 +1,7 @@
 <table class="table table-boldered">
 
     <div class="pull-right">
-    <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+    <%= link_to("遇见我的教练", new_job_path, :class => "btn btn-danger" ) %>
     </div>
 
     <div class="dropdown clearfix pull-right">
@@ -11,10 +11,10 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
             <li>
-              <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+              <%= link_to("好评从高到低", jobs_path(:order => "by_lower_bound")) %>
             </li>
             <li>
-                <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                <%= link_to("好评从低到高", jobs_path(:order => "by_upper_bound")) %>
 
             </li>
             <li>
@@ -23,13 +23,29 @@
             </li>
         </ul>
     </div>
-    
-    <table class="table table-boldered">
+
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#">等你遇见的人</a></li>
+        <li role="presentation"><a href="#">遇见方式</a></li>
+        <li role="presentation"><a href="#">遇见时间</a></li>
+        <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        遇见城市 <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+          <li role="presentation"><a href="#">北京</a></li>
+            <li role="presentation"><a href="#">深圳</a></li>
+              <li role="presentation"><a href="#">广州</a></li>
+              <li role="presentation"><a href="#">昆明</a></li>
+      </ul>
+      </ul>
+
         <thead>
             <tr>
-                <td>职缺</td>
-                <td>薪资下限</td>
-                <td>薪资上限</td>
+                <td>教练昵称</td>
+                <td>好评课时下限</td>
+                <td>好评课时上限</td>
                 <td>刊登时间</td>
             </tr>
 

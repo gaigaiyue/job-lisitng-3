@@ -33,36 +33,38 @@
 
 
  .jumbotron {
-   background-image:url('http://y.photo.qq.com/img?s=n0m7YMg0L&l=y.jpg');
+   background-image:url('http://www.semperviva.com/wp-content/uploads/2015/05/Semperviva_MainBanner_StephanieMaiko_3.jpg');
    background-repeat: no-repeat;
    background-size: cover;
    padding-bottom: 110px;
+   text-align:right;
  }
 
  .title {
    font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-   text-align: center;
+   text-align: right;;
    margin-top: 200px;
    margin-bottom: 80px;
  }
 
+
  .slogan {
    margin-top: 10px;
    margin-bottom: 50px;
-   text-align: center;
+   text-align: right;
    color: white;
    top: 12px;
  }
 
  .lead {
    margin-bottom: 60px;
-   text-align: center;
+   text-align: right;;
    color: white;
  }
 
  .caption {
   margin: 30px;
-  text-align: center;
+  text-align: right;
   top: 20px;
 }
 
@@ -70,4 +72,14 @@
     border: 0 none;
     box-shadow: none;
     margin-top: 60px;
+    text-align: right;
+}
+
+.serachform {
+  position: relative;
+  height: 100%;
+  width: 540px;
+  min-height: 100px;
+  margin: 80px auto 0 auto;
+  text-align: left;
 }
